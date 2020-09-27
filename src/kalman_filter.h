@@ -63,6 +63,13 @@ class KalmanFilter {
 
   // measurement covariance matrix
   Eigen::MatrixXd R_;
+
+  // Identity matrix, used to calculate the P_
+  Eigen::MatrixXd I_;
+
+private:
+  float NormalizeAngle(float angle);
+  void UpdateEstimate(Eigen::VectorXd &y);
 };
 
 #endif // KALMAN_FILTER_H_
